@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "uplodeItem";
+}
+
+<form asp-action="UplodeItem"
+      asp-controller="UserWorld"
+      method="post"
+      enctype="multipart/form-data">
+    <input type="file" id="file1"
+           name="file1"
+           multiple="multiple" />
+    <button type="submit">Upload File(s)</button>
+</form>
+@if (ViewBag.UploadItemMessage != null)
+{
+    <h2>@ViewBag.UploadItemMessage</h2>
+}

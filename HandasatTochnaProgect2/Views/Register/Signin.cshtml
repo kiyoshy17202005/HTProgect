@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Signin";
+}
+@model HandasatTochnaProgect2.Models.User
+<div>
+    <div>
+        <div>
+            <div>
+                <h2></h2>
+                <form action="/Register/Signin" method="post">
+
+                    <h6>Name:</h6>
+                    <input type="text" id="name" asp-for="name" placeholder="Name" />
+                    <br />
+
+                    <h6>User Name:</h6>
+                    <input type="text" id="userName" asp-for="userName" placeholder="User name" />
+                    <br />
+
+                    <h6>Passward:</h6>
+                    <input type="password" id="password" asp-for="password" placeholder="Password" />
+                    <br />
+
+                    <h6>Email:</h6>
+                    <input type="email" id="email" asp-for="email" placeholder="Email" />
+                    <br />
+
+                    <h6>Phon Number:</h6>
+                    <input type="text" id="phon" asp-for="phonNumber" placeholder="Phon number" />
+                    <br />
+
+                    <br />
+                    <button type="submit" id="submit">create</button>
+                    <button type="reset" id="reset">reset</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@if (ViewBag.userNameExsist != null)
+{
+    <h2>@ViewBag.userNameExsist</h2>
+}
+@if (ViewBag.registerMassage != null)
+{
+    <h2>@ViewBag.registerMassage</h2>
+}

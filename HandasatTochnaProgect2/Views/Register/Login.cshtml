@@ -1,0 +1,34 @@
+﻿@model HandasatTochnaProgect2.Models.User
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<form action="/Register/Login" method="post">
+    <div>
+        <table align="center">
+            <tr>
+                <td>User Name</td>
+                <td><input type="text" id="userName" name="userName" asp-for="userName" placeholder="User name"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password" name="password" asp-for="password" placeholder="Password"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">login</button></td>
+                <td><button type="reset">reset</button></td>
+            </tr>
+        </table>
+    </div>
+</form>
+
+@if (ViewBag.loginError != null)
+{
+    <h2>@ViewBag.loginError</h2>
+}
+
+
+<a style="color: black" asp-area="" asp-controller="Login" asp-action="signIn"></a>
+<img src="~/images/hogwarts-castle_2.jpg" style="width:100%; height:70%" class="center" />
+

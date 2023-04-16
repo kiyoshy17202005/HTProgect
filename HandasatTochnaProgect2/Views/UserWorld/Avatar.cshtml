@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Avatar";
+}
+
+<ul>
+
+    @for (int i = 0; i < ViewBag.avatarImage.Count; i++)
+    {
+    <img src="@ViewBag.avatarImage[i]" />
+    }
+</ul>

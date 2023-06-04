@@ -8,19 +8,15 @@ namespace HandasatTochnaProgect2.Models
 {
     public class Avatar
     {
-        public Avatar(int id)
-        {
-            this.id = id;
-        }
 
         public int id { get; set; }
 
         public String name { get; set; }
 
-        public int shirtId { get; set; } = 3;
+        public ItemID shirtId { get; set; } = Constant.DEFULT_SHIRT;
 
-        public int pantsId { get; set; } = 2;
+        public ItemID pantsId { get; set; } = Constant.DEFULT_PANTS;
 
-        public int bodyId { get; set; } = 1;
+        public ItemID bodyId { get; set; } = Constant.DEFULT_BODY;
     }
 }

@@ -5664,11 +5664,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kiyos\\source\\repos\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
+      "projectUniqueName": "C:\\Users\\kiyos\\source\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
       "projectName": "HandasatTochnaProgect2",
-      "projectPath": "C:\\Users\\kiyos\\source\\repos\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
+      "projectPath": "C:\\Users\\kiyos\\source\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
       "packagesPath": "C:\\Users\\kiyos\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kiyos\\source\\repos\\HandasatTochnaProgect2\\obj\\",
+      "outputPath": "C:\\Users\\kiyos\\source\\HTProgect\\HandasatTochnaProgect2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kiyos\\AppData\\Roaming\\NuGet\\NuGet.Config",

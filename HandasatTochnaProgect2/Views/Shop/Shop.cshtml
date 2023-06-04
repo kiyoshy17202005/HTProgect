@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Shop";
+}
+
+<ul>
+    <div><h1>@ViewBag.shopItemsNames.Length</h1></div>
+
+    @for (int j = 0; j < ViewBag.shopItemsNames.Length; j++)
+    {
+        <div class="col">
+            @for (int i = 0; i < ViewBag.shopItemsNames[j].Count; i++)
+            {
+                <form action="/Shop/Buy" method="post">
+                    <div class="item row">
+                        <h4>Name: @ViewBag.shopItemsNames[j][i]</h4>
+                        <h4>userName: @ViewBag.shopItemsSellers[j][i]</h4>
+                        <h4>Cost: @ViewBag.shopItemsCosts[j][i]</h4>
+                        <img src="@ViewBag.shopItemsImages[j][i]" class="item_image" />
+                    </div>
+
+                </form>
+            }
+        </div>
+    }
+</ul>

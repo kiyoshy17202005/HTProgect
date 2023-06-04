@@ -1,0 +1,13 @@
+﻿.item {
+}
+
+.item_image {
+    width: 200px;
+    height: 200px;
+}
+
+.bg-image {
+    background-image: url('../images/universe_1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

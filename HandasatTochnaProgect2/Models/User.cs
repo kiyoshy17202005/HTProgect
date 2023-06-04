@@ -9,7 +9,6 @@ namespace HandasatTochnaProgect2.Models
 {
     public class User
     {
-
         public string name { get; set; }
 
         [Required(ErrorMessage = "Please enter a username")]
@@ -27,7 +26,7 @@ namespace HandasatTochnaProgect2.Models
 
         public int avatarId { get; set; }
 
-        public bool director { get; set; } = false;
+        public bool director { get; set; }
 
     }
 }

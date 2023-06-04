@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "MyItems";
+}
+
+<ul>
+    @for (int j = 0; j < ViewBag.myItemsNames.Length; j++)
+    {
+        <div class="col">
+            @for (int i = 0; i < ViewBag.myItemsNames[j].Count; i++)
+            {
+                <form>
+                    <div class="item row">
+                        <h4>Name: @ViewBag.myItemsNames[j][i]</h4>
+                        <img src="@ViewBag.myItemsImages[j][i]" class="item_image" />
+                    </div>
+
+                </form>
+            }
+        </div>
+    }
+</ul>

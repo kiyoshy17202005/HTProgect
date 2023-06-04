@@ -6,8 +6,9 @@
     <title>@ViewData["Title"] - HandasatTochnaProgect2</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
 </head>
-<body>
+<body class="bg-image">
     @{
         Object userName = TempData["userName"];
         TempData["userName"] = userName;
@@ -37,6 +38,9 @@
                         @if (userName != null)
                         {
                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="DeleteUser">DeleteUser</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Logout">Logout</a>
                             </li>
                             <li class="nav-item">
@@ -45,8 +49,14 @@
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="UserWorld" asp-action="Avatar">Avatar</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="MyItems">MyItems</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="Shop">Shop</a>
+                            </li>
                         }
-                        @if (userName != null && userName.ToString().Equals("asafgu"))
+                        @if (userName != null && userName.ToString().Equals(Constant.DIRECTOR_USER_NAME))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="UserWorld" asp-action="UplodeItem">UplodeItem</a>

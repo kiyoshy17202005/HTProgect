@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pMQr9hohbUYVVIkvlS7avp0MiQfNGBlOEKZLReoQGxoYfZjLO1OwsMw+r8nqy5qyEbZpd47wWuJNoFYDsODmig==",
+  "dgSpecHash": "L6L8nwaF6gD2dCkW3zm6rj9rySRZBI0xXvL9uGFramtuxrqSy+DbS1NOsscU9N5wapBjSDHXpp3gZfFxyAlvVQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kiyos\\source\\repos\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
+  "projectFilePath": "C:\\Users\\kiyos\\source\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kiyos\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kiyos\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

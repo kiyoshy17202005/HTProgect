@@ -13,13 +13,20 @@ namespace HandasatTochnaProgect2.Models
         public String name { get; set; }
 
         public byte[] ImageData { get; set; }
+    
+        public enum _type{
+            body,
+            pants,
+            shirt
+        };
+        public _type type { get; set; }
     }
     public class ItemToSell
     {
 
         public int id { get; set; }
-        public int itemId { get; set; }
-        public int sellerId { get; set; }
+        public ItemID itemId { get; set; }
+        public string sellerUserName { get; set; }
         public int cost { get; set; }
     }
 }

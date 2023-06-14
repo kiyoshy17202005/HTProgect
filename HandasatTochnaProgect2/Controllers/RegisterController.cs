@@ -112,7 +112,7 @@ namespace HandasatTochnaProgect2.Controllers
                         User userToDelete = db.Users.Where(n => n.userName.Equals(user.userName)).ToList()[0];
                         if (userToDelete.password.Equals(user.password))
                         {
-                            deleteUser(user.userName);
+                            deleteUser(userToDelete);
                             return Logout();
                         }
                         ViewBag.isDeleted = "password is incorrect";
@@ -124,7 +124,7 @@ namespace HandasatTochnaProgect2.Controllers
                         List<User> userToDelete = db.Users.Where(n => n.userName.Equals(user.userName) && n.password.Equals(user.password)).ToList();
                         if (userToDelete.Count == 1)
                         {
-                            deleteUser(user.userName);
+                            deleteUser(userToDelete[0]);
                         }
                         else
                         {
@@ -145,12 +145,11 @@ namespace HandasatTochnaProgect2.Controllers
             return View();
         }
 
-        private void deleteUser(String userName)
+        private void deleteUser(User user_ToRemove)
         {
+            String userName = user_ToRemove.userName;
             using (var db = new dbContext())
             {
-
-                var user_ToRemove = db.Users.Where(n => n.userName.Equals(userName)).ToList()[0];
                 var avatar_ToRemove = db.Avatars.Where(n => n.id.Equals(user_ToRemove.avatarId)).ToList()[0];
                 var ItemsToSell_ToRemove = db.Shop.Where(n => n.sellerUserName.Equals(userName)).ToList();
                 var UsersToItems_ToRemove = db.Users2Items.Where(n => n.userName.Equals(userName)).ToList();

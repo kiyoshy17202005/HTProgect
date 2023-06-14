@@ -27,11 +27,24 @@ namespace HandasatTochnaProgect2.Controllers
             {
                 User user = db.Users.Where(n => n.userName.Equals(TempData["userName"])).ToList()[0];
                 Avatar avatar = db.Avatars.Where(n => n.id.Equals(user.avatarId)).ToList()[0];
-                string bodyBase64Data = Convert.ToBase64String(db.ItemsList.Where(n => n.id.Equals(avatar.bodyId.id)).ToList()[0].ImageData);
+
+                Item body;
+                if (avatar.bodyId.Equals(Constant.DEFULT_ITEM)) { body = db.ItemsList.Where(n => n.id.Equals(db.DefultBody.bodyId)).ToList()[0]; }
+                else { body = db.ItemsList.Where(n => n.id.Equals(avatar.bodyId)).ToList()[0]; }
+                string bodyBase64Data = Convert.ToBase64String(body.ImageData);
+
+                Item pants;
+                if (avatar.pantsId.Equals(Constant.DEFULT_ITEM)) { pants = db.ItemsList.Where(n => n.id.Equals(db.DefultPants.pantsId)).ToList()[0]; }
+                else { pants = db.ItemsList.Where(n => n.id.Equals(avatar.pantsId)).ToList()[0]; }
+                string pantsBase64Data = Convert.ToBase64String(pants.ImageData);
+
+                Item shirt;
+                if (avatar.shirtId.Equals(Constant.DEFULT_ITEM)) { shirt = db.ItemsList.Where(n => n.id.Equals(db.DefultShirt.shirtId)).ToList()[0]; }
+                else { shirt = db.ItemsList.Where(n => n.id.Equals(avatar.shirtId)).ToList()[0]; }
+                string shirtBase64Data = Convert.ToBase64String(shirt.ImageData);
+
                 items.Add(string.Format("data:image/jpg;base64,{0}", bodyBase64Data));
-                string shirtBase64Data = Convert.ToBase64String(db.ItemsList.Where(n => n.id.Equals(avatar.shirtId.id)).ToList()[0].ImageData);
                 items.Add(string.Format("data:image/jpg;base64,{0}", shirtBase64Data));
-                string pantsBase64Data = Convert.ToBase64String(db.ItemsList.Where(n => n.id.Equals(avatar.pantsId.id)).ToList()[0].ImageData);
                 items.Add(string.Format("data:image/jpg;base64,{0}", pantsBase64Data));
 
             }
@@ -94,20 +107,21 @@ namespace HandasatTochnaProgect2.Controllers
                 using (var db = new dbContext())
                 {
                     db.ItemsList.Add(item);
+                    item.universal = true;
+
                     db.SaveChanges();
-                    if (true)
+                    if (item.universal)
                     {
-                        db.UniversalItems.Add(new ItemID(item.id));
                         switch ((int)item.type)
                         {
                             case 0:
-                                Constant.DEFULT_BODY.id = item.id;
+                                db.DefultBody.bodyId = item.id;
                                 break;
                             case 1:
-                                Constant.DEFULT_SHIRT.id = item.id;
+                                db.DefultShirt.shirtId = item.id;
                                 break;
                             case 2:
-                                Constant.DEFULT_PANTS.id = item.id;
+                                db.DefultPants.pantsId = item.id;
                                 break;
                             default:
                                 break;
@@ -115,7 +129,7 @@ namespace HandasatTochnaProgect2.Controllers
                     }
                     else
                     {
-                        User2Item user2Item = new User2Item((String)userName, new ItemID(item.id));
+                        User2Item user2Item = new User2Item((String)userName, item.id);
                         db.Users2Items.Add(user2Item);
                     }
                     

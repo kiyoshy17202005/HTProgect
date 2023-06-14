@@ -20,12 +20,14 @@ namespace HandasatTochnaProgect2.Models
             shirt
         };
         public _type type { get; set; }
+
+        public bool universal { get; set; }
     }
     public class ItemToSell
     {
 
         public int id { get; set; }
-        public ItemID itemId { get; set; }
+        public int itemId { get; set; }
         public string sellerUserName { get; set; }
         public int cost { get; set; }
     }

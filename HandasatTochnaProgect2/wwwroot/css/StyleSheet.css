@@ -7,7 +7,8 @@
 }
 
 .bg-image {
-    background-image: url('../images/universe_1.jpg');
+/*    background-image: url('../images/universe_1.jpg');
+*/    background-image: url('../images/Africka.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }

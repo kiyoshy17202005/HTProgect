@@ -8,7 +8,7 @@ namespace HandasatTochnaProgect2.Models
 {
     public class User2Item
     {
-        public User2Item(string userName, ItemID itemId)
+        public User2Item(string userName, int itemId)
         {
             this.userName = userName;
             this.itemId = itemId;
@@ -17,6 +17,6 @@ namespace HandasatTochnaProgect2.Models
         [Key]
         public String userName { get; set; }
 
-        public ItemID itemId { get; set; }
+        public int itemId { get; set; }
     }
 }

@@ -13,10 +13,10 @@ namespace HandasatTochnaProgect2.Models
 
         public String name { get; set; }
 
-        public ItemID shirtId { get; set; } = Constant.DEFULT_SHIRT;
+        public int shirtId { get; set; } = Constant.DEFULT_ITEM;
 
-        public ItemID pantsId { get; set; } = Constant.DEFULT_PANTS;
+        public int pantsId { get; set; } = Constant.DEFULT_ITEM;
 
-        public ItemID bodyId { get; set; } = Constant.DEFULT_BODY;
+        public int bodyId { get; set; } = Constant.DEFULT_ITEM;
     }
 }

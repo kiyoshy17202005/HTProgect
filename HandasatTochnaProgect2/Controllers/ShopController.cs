@@ -25,10 +25,10 @@ namespace HandasatTochnaProgect2.Controllers
             }
             using (var db = new dbContext())
             {
-                List<ItemID> universalItems = db.UniversalItems.ToList();
+                List<Item> universalItems = db.ItemsList.Where(n => n.universal).ToList();
                 for (int i = 0; i < universalItems.Count; i++)
                 {
-                    Item item = db.ItemsList.Where(n => n.id.Equals(universalItems[i].id)).ToList()[0];
+                    Item item = universalItems[i];
                     Item._type type = item.type;
 
                     int type_num = ((int)type);
@@ -42,7 +42,7 @@ namespace HandasatTochnaProgect2.Controllers
                 for (int i = 0; i < items.Count; i++)
                 {
 
-                    Item item = db.ItemsList.Where(n => n.id.Equals(items[i].itemId.id)).ToList()[0];
+                    Item item = db.ItemsList.Where(n => n.id.Equals(items[i].itemId)).ToList()[0];
                     Item._type type = item.type;
 
                     int type_num = ((int)type);
@@ -78,7 +78,7 @@ namespace HandasatTochnaProgect2.Controllers
                 for (int i = 0; i < items.Count; i++)
                 {
 
-                    Item item = db.ItemsList.Where(n => n.id.Equals(items[i].itemId.id)).ToList()[0];
+                    Item item = db.ItemsList.Where(n => n.id.Equals(items[i].itemId)).ToList()[0];
                     int type_num = ((int)item.type);
 
                     itemsNames[type_num].Add(item.name);

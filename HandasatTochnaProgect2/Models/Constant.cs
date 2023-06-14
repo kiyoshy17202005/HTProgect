@@ -9,9 +9,7 @@ namespace HandasatTochnaProgect2.Models
     {
         public static int ITEM_TYPES_NUMBER = 3;
 
-        public static ItemID DEFULT_SHIRT = new ItemID(-1);
-        public static ItemID DEFULT_PANTS = new ItemID(-1);
-        public static ItemID DEFULT_BODY = new ItemID(-1);
+        public static int DEFULT_ITEM = 0;
 
         public static String DIRECTOR_USER_NAME = "asafgu";
     }

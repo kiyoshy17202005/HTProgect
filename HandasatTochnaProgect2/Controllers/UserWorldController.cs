@@ -29,17 +29,17 @@ namespace HandasatTochnaProgect2.Controllers
                 Avatar avatar = db.Avatars.Where(n => n.id.Equals(user.avatarId)).ToList()[0];
 
                 Item body;
-                if (avatar.bodyId.Equals(Constant.DEFULT_ITEM)) { body = db.ItemsList.Where(n => n.id.Equals(db.DefultBody.bodyId)).ToList()[0]; }
+                if (avatar.bodyId.Equals(Constant.DEFULT_ITEM)) { body = db.ItemsList.Where(n => n.universal.Equals(true) && ((int)n.type).Equals(0)).ToList()[0]; }
                 else { body = db.ItemsList.Where(n => n.id.Equals(avatar.bodyId)).ToList()[0]; }
                 string bodyBase64Data = Convert.ToBase64String(body.ImageData);
 
                 Item pants;
-                if (avatar.pantsId.Equals(Constant.DEFULT_ITEM)) { pants = db.ItemsList.Where(n => n.id.Equals(db.DefultPants.pantsId)).ToList()[0]; }
+                if (avatar.pantsId.Equals(Constant.DEFULT_ITEM)) { pants = db.ItemsList.Where(n => n.universal.Equals(true) && ((int)n.type).Equals(1)).ToList()[0]; }
                 else { pants = db.ItemsList.Where(n => n.id.Equals(avatar.pantsId)).ToList()[0]; }
                 string pantsBase64Data = Convert.ToBase64String(pants.ImageData);
 
                 Item shirt;
-                if (avatar.shirtId.Equals(Constant.DEFULT_ITEM)) { shirt = db.ItemsList.Where(n => n.id.Equals(db.DefultShirt.shirtId)).ToList()[0]; }
+                if (avatar.shirtId.Equals(Constant.DEFULT_ITEM)) { shirt = db.ItemsList.Where(n => n.universal.Equals(true) && ((int)n.type).Equals(2)).ToList()[0]; }
                 else { shirt = db.ItemsList.Where(n => n.id.Equals(avatar.shirtId)).ToList()[0]; }
                 string shirtBase64Data = Convert.ToBase64String(shirt.ImageData);
 
@@ -108,31 +108,15 @@ namespace HandasatTochnaProgect2.Controllers
                 {
                     db.ItemsList.Add(item);
                     item.universal = true;
-
-                    db.SaveChanges();
                     if (item.universal)
                     {
-                        switch ((int)item.type)
-                        {
-                            case 0:
-                                db.DefultBody.bodyId = item.id;
-                                break;
-                            case 1:
-                                db.DefultShirt.shirtId = item.id;
-                                break;
-                            case 2:
-                                db.DefultPants.pantsId = item.id;
-                                break;
-                            default:
-                                break;
-                        }
+                        List<Item> preUniversalItem = db.ItemsList.Where(n => n.universal.Equals(item.universal) && n.type.Equals(item.type)).ToList();
+                        if (preUniversalItem.Count == 1)
+                            preUniversalItem[0].universal = false;
                     }
-                    else
-                    {
-                        User2Item user2Item = new User2Item((String)userName, item.id);
-                        db.Users2Items.Add(user2Item);
-                    }
-                    
+                    db.SaveChanges();
+                    User2Item user2Item = new User2Item((String)userName, item.id);
+                    db.Users2Items.Add(user2Item);
                     db.SaveChanges();
                 }
             }

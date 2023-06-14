@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HandasatTochnaProgect2.Migrations
 {
     [DbContext(typeof(dbContext))]
-    [Migration("20230611102844_a")]
+    [Migration("20230614082841_a")]
     partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

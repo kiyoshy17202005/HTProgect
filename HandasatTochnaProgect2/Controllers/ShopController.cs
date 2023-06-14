@@ -25,7 +25,8 @@ namespace HandasatTochnaProgect2.Controllers
             }
             using (var db = new dbContext())
             {
-                List<Item> universalItems = db.ItemsList.Where(n => n.universal).ToList();
+                List<Item> universalItems = db.ItemsList.Where(n => n.universal
+                                       && db.Users2Items.Where(m => m.itemId.Equals(n.id) && m.userName.Equals(userName)).ToList().Count == 0).ToList();
                 for (int i = 0; i < universalItems.Count; i++)
                 {
                     Item item = universalItems[i];

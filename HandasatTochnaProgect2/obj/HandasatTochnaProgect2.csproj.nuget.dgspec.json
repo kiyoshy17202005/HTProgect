@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kiyos\\source\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj": {}
+    "C:\\Users\\student\\source\\repos\\AsafSite\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kiyos\\source\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj": {
+    "C:\\Users\\student\\source\\repos\\AsafSite\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kiyos\\source\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
+        "projectUniqueName": "C:\\Users\\student\\source\\repos\\AsafSite\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
         "projectName": "HandasatTochnaProgect2",
-        "projectPath": "C:\\Users\\kiyos\\source\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
-        "packagesPath": "C:\\Users\\kiyos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kiyos\\source\\HTProgect\\HandasatTochnaProgect2\\obj\\",
+        "projectPath": "C:\\Users\\student\\source\\repos\\AsafSite\\HTProgect\\HandasatTochnaProgect2\\HandasatTochnaProgect2.csproj",
+        "packagesPath": "C:\\Users\\bt-user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\student\\source\\repos\\AsafSite\\HTProgect\\HandasatTochnaProgect2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\kiyos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bt-user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
